@@ -1,4 +1,4 @@
-import scala.annotation.tailrec
+package com.scala.sessions.lists
 
 object ListUtils {
   // function to return the last element of a list
@@ -43,12 +43,13 @@ object ListUtils {
     deDup(Nil, x)
   }
 
+  // function to sort a list contaiting sub lists, based on sublist's length
   def sortListwithSubList (x: List[List[Int]]) = {
      x.sortWith(_.length < _.length)
   }
 }
 
-object Session1 {
+object ListJob {
   def main(args: Array[String]): Unit = {
     val l = List(1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 5, 5, 8)
     val subList = List(List(1,2), List(3), List(3,4,5), List(8))
