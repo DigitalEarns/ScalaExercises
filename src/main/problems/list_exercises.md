@@ -31,7 +31,7 @@ v) Function to return the reverse of a given list as argument
 	Ans: List (8, 5, 3, 3, 3, 2, 1, 1)
 
 vi) Function to eliminate the consecutive duplicates of a list (repeated copy of elements should be replaced with a 
-    single copy of the element)
+    single copy of the element), using pattern matching
 	       
 	Ans: List(1,2,3,5,8)
 
