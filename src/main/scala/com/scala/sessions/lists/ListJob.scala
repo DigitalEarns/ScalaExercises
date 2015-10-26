@@ -60,5 +60,7 @@ object ListJob {
     println("Reverse of the list           = " + ListUtils.reverseList(l))
     println("After removing cons dups      = " + ListUtils.removeDuplicates(l))
     println("Sorting based on sublist size = " + ListUtils.sortListwithSubList(subList))
+
+    assert (l.size == 14)
   }
 }
