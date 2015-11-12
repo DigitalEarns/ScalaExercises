@@ -2,26 +2,32 @@ package com.scala.sessions.etl
 
 import scala.util.Try
 
-case class MetaData[T](name: String, startIndex: Int, endIndex: Int, convert: String => Option[T])
+case class MetaData[T](name: String, startIndex: Int, endIndex: Int, convert: String => Either[String, T])
 
 sealed trait TypeCheck[T] {
-  def toType(x: String): Option[T]
+  def toType(x: String): Either[String, T]
 }
 
 object IntType extends TypeCheck[Int] {
-  def toType (x: String): Option[Int] = Try(x.toInt).toOption
+  def toType (x: String): Either[String, Int] = Try(x.toInt).isFailure match {
+    case true => Left("Interger Was expected")
+    case false => Right(x.toInt)
+  }
 }
 
 object DoubleType extends TypeCheck[Double] {
-  def toType (x: String): Option[Double] = Try(x.toDouble).toOption
+  def toType (x: String): Either[String, Double] = Try(x.toDouble).isFailure match {
+    case true => Left("Interger Was expected")
+    case false => Right(x.toDouble)
+  }
 }
 
 object SampleFileSchema {
   val mainSchema = List(
-    MetaData[String]("empname", 0, 16, Some(_)),
+    MetaData[String]("empname", 0, 16, Right(_)),
     MetaData[Int]("empid", 17, 23, IntType.toType(_)),
-    MetaData[String]("location", 24, 30, Some(_)),
-    MetaData[String]("team",31, 48, Some(_)),
+    MetaData[String]("location", 24, 30, Right(_)),
+    MetaData[String]("team",31, 48, Right(_)),
     MetaData[Double]("salary",49, 56, DoubleType.toType(_))
   )
 }
@@ -33,8 +39,8 @@ object EtlFixedLengthRecord {
       f => {
         // if the type is not matched, field value is defaulted to ""
         f.convert(record.substring(f.startIndex, f.endIndex).trim) match {
-          case Some(x) => x
-          case None    => ""
+          case Right(x) => x
+          case Left(_)    => ""
         }
       }
     }
