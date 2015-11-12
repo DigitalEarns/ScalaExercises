@@ -17,7 +17,7 @@ object IntType extends TypeCheck[Int] {
 
 object DoubleType extends TypeCheck[Double] {
   def toType (x: String): Either[String, Double] = Try(x.toDouble).isFailure match {
-    case true => Left("Interger Was expected")
+    case true => Left("Double Was expected")
     case false => Right(x.toDouble)
   }
 }
@@ -40,7 +40,7 @@ object EtlFixedLengthRecord {
         // if the type is not matched, field value is defaulted to ""
         f.convert(record.substring(f.startIndex, f.endIndex).trim) match {
           case Right(x) => x
-          case Left(_)    => ""
+          case Left(x)    => x
         }
       }
     }
