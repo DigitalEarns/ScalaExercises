@@ -9,7 +9,7 @@ Eg: `Show` is a type class in scalaz whose functions are available for types suc
 
 ### Problems
 
-* **Use case**: Get a proper value for the final comparison
+* **Use case**: Get a proper value for the final comparison <br />
 //HINT: Equal type class in scalaz
 
 `val int = 1` <br />
@@ -26,12 +26,12 @@ executing the above use case. The intention is to have a type safe code.
 Understand how scalaz operator works for Int, and using the same operator try and compare two 
 `java.lang.Thread` instances in a type safe way. You may have to do something more here to make it work without compilation errors
 
-* **Use case**: Bring in compilation error for the below code and avoid uncertainities in your code.
+* **Use case**: Bring in compilation error for the below code and avoid uncertainities in your code.<br />
 //HINT: Order type class in scalaz.
 
 ` if (1 > 2.0) `
 
-* **Use case**: Bring in compilation error while trying to execute the below code base
+* **Use case**: Bring in compilation error while trying to execute the below code base <br />
 //HINT: Show type class in scalaz.
 
 `println(new Thread)`
