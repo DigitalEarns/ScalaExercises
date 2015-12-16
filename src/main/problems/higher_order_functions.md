@@ -11,7 +11,7 @@ Question
 
    - write a function to check if a number passed into it is an even, function definition should be
         f: Int => Boolean
-   - write a functiont o check if a number passed into it is on odd, function definition should be
+   - write a function to check if a number passed into it is an odd, function definition should be
         f: Int => Boolean
    - Create a List of any 10 numbers, and pass on the function to the list to filter the odd and even numbers and print
    
