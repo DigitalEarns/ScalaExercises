@@ -24,9 +24,12 @@ object Implicits {
      */
 
     // comment the function and you can see a compilation error for the assignment in the next line.
-    implicit def convertToInt(x: Double) = x.toInt
+    // you may notice that we are not calling the function anywhere explicitly.
+    implicit def convertDoubleToInt(x: Double) = x.toInt
     val n: Int = 3.5
 
-    
+    // more examples on implicit conversions
+    implicit def convertStringToInt(x: String) = x.toInt
+    val sum: Int = "123" + 1
   }
 }
