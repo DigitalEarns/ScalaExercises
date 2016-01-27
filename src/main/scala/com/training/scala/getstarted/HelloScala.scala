@@ -17,11 +17,8 @@ object HelloScala {
     // a = 20
 
     // initializing a mutable variable using var
-    var b = 20
-    b = 30
-
-    //lazy - expression is executed only when there is reference to it
-    lazy val x = 30
-    val y = x + 50 // x is actually initialized while executing this line
+    var b = 20 // a legal expression even though we haven't explicitly stated the data type of `b`.
+               // Scala compiler can infer the data type as Int.
+    b = 30     // we can mutate the value of `b` since its declared as `var`
   }
 }
