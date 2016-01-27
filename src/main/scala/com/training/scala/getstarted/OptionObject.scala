@@ -1,7 +1,7 @@
 package com.training.scala.getstarted
 
 /**
- * Created by sujesh on 25/01/16.
+ * An exmaple on the usage of Options
  */
 
 object OptionObject {
