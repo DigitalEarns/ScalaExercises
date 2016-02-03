@@ -2,6 +2,11 @@ package com.training.scala.getstarted
 
 /**
  *  One simple example of sealed trait and its usage.
+ *
+ *  Sealed traits can be considered as alternative to `Enums` (But not limited to) .
+ *  The constraint of sealed trait is that they can be only extended single file
+ *  where the trait itself is defined. By this constraint compiler knows every possible
+ *  subtypes and can reason about it.
  */
 
 sealed trait SuperType
@@ -25,6 +30,7 @@ object SuperType {
   }
 }
 
+// Driver program
 object RunApp {
   def main(args: Array[String]) {
     SuperType.doSomethingWith(ASubType(10))

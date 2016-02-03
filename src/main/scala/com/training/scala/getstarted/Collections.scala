@@ -1,17 +1,31 @@
 package com.training.scala.getstarted
 
 /**
- *  Getting started with List (one of the varities of collections in Scala
+ *  Getting started with List (one of the most used collection in Scala).
  *  Execute the main and observe the results to understand the usage of various functions over collections
  */
 object Collections {
+
+  def  covertToString(arg: Int): String =  arg.toString
+
   def main(args: Array[String]) {
 
+    // `intList` is an immutable list of Int.
     val intList: List[Int] = List(1,2,3)
-    val newList: List[Int] = intList.map(_ * 2)
+
+    // The function `map` in List type is a higher order function.
+    // It accepts a function that operate on one element of a List at
+    // a time. The argument function `maps` one element of list to another
+    // type say, `U` .i.e once you appply the `map` function the result
+    // you get back is a List[U].
+
+    // here List[Int] is mapped to List[String]
+    val newList: List[String] = intList.map(covertToString)
 
     val words = List("the", "quick", "brown", "fox")
     println(words.map(_.toList))
+
+    // `flatMap` flattens the results after mapping.
     println(words.flatMap(_.toList))
     println(newList)
 
