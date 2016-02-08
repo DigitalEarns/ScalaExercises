@@ -1,7 +1,7 @@
 package com.training.scala.getstarted
 
 /**
- *  Getting started with List (one of the most used collection in Scala).
+ *  Getting started with List (one of the most used collections in Scala).
  *  Execute the main and observe the results to understand the usage of various functions over collections
  */
 object Collections {
@@ -16,7 +16,7 @@ object Collections {
     // The function `map` in List type is a higher order function.
     // It accepts a function that operate on one element of a List at
     // a time. The argument function `maps` one element of list to another
-    // type say, `U` .i.e once you appply the `map` function the result
+    // type say, `U` .i.e once you apply the `map` function the result
     // you get back is a List[U].
 
     // here List[Int] is mapped to List[String]
