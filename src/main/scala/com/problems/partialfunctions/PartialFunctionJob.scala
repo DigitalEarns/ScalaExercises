@@ -1,4 +1,4 @@
-package com.scala.sessions.partialfunctions
+package com.problems.partialfunctions
 
 object PartialFunctionJob {
 

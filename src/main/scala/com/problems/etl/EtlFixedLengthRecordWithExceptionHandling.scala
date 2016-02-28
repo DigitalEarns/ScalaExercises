@@ -1,4 +1,4 @@
-package com.scala.sessions.etl
+package com.problems.etl
 
 import scala.util.Try
 

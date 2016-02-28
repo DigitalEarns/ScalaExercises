@@ -1,4 +1,4 @@
-package com.scala.sessions.higherorderfunctions
+package com.problems.higherorderfunctions
 
 object HOFunctions {
 

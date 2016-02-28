@@ -1,4 +1,4 @@
-package com.scala.sessions
+package com.problems.implicits
 
 object Implicits {
 

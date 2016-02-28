@@ -1,4 +1,4 @@
-package com.scala.sessions.lists
+package com.problems.lists
 
 object ListUtils {
   // function to return the last element of a list

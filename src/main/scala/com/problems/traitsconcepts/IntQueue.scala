@@ -1,4 +1,4 @@
-package com.scala.sessions.traitsconcepts
+package com.problems.traitsconcepts
 
 /**
   * As per the problem, lets define the underlying queue.
