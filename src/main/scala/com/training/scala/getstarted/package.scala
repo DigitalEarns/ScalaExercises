@@ -8,7 +8,7 @@ package com.training.scala
 */
 package object getstarted {
   val commonVal = "an example of package object"
-  // this is a simple example without and guards to see if the conversion is success or failure.
-  def convertToDouble(str: String) = str.toDouble
 
+  // this is a simple function without any guards to see if the conversion is success or failure.(not best practise)
+  def convertToDouble(str: String) = str.toDouble
 }
