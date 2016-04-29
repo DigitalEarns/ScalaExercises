@@ -27,24 +27,24 @@ object StructuralTypes extends App {
    * `A` contains a implementation of function named `addOne` which
    * takes in no args and returns `Int`
    *
-   * Note: Multiple interface structures can be defined sepreated by semicolon
+   * Note: Multiple interface structures can be defined separated by semicolon
    * Eg:- `[A<: {def addOne: Int; def print}]`
    */
-  def printFunctionResult[A<: {def addOne: Int}](data: A) = println(data.addOne)
+  def printFunctionResult[A <: {def addOne: Int}](data: A) = println(data.addOne)
 
   /**
    * This function accept argument `data` of type `A` such that
    * `A` contains a implementation of function named `print` which
    * takes in no args and returns `Unit`
    */
-  def callPrintFunction[A<: {def print}](data: A) = data.print // you where able to call print b/c of structural type defined
+  def callPrintFunction[A <: {def print}](data: A) = data.print // you where able to call print b/c of structural type defined
 
   /**
    * This function accept argument `data` of type `A` such that
    * `A` is a subtype of `FloatNumber` and has an `val defaultValue: Int`
    * as its member variable
    */
-  def printDefaultValue[A<: FloatNumber {val defaultValue: Int}](data: A) = println(data.defaultValue)
+  def printDefaultValue[A <: FloatNumber {val defaultValue: Int}](data: A) = println(data.defaultValue)
 
   printFunctionResult(IntNumber(2))  // Res: 3
   callPrintFunction(IntNumber(2))    // Res: 10
@@ -55,7 +55,7 @@ object StructuralTypes extends App {
                                          // type mismatch: does not conform to method printFunctionResult's
                                          //                type parameter bounds [A <: AnyRef{def addOne: Int}]
                                          //
-                                         // This is because `FloatNumber` doesnot contain a function `addOne` which returns `Int`
+                                         // This is because `FloatNumber` does not contain a function `addOne` which returns `Int`
 
   printDefaultValue(IntNumber(2))        // Compile time error:
                                          // type mismatch: does not conform to method printDefaultValue's
